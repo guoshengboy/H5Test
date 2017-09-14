@@ -39,4 +39,37 @@ function displayLocation(position) {
    var imgUrl = "http://apis.map.qq.com/ws/staticmap/v2/?center="+lat+","+longitude+"&zoom=10&size=600*300&maptype=roadmap&markers=size:large|color:0xFFCCFF|label:k|39.8802147,116.415794&key=CISBZ-M53K3-NZI3O-3HPS5-VVZO7-NBFX2";
    div.innerHTML = "<img src='"+imgUrl+"' />";
 
+   var distancelabel = document.getElementById('distance');
+   var firstCoords = {
+       latitude: 34,
+       longitude: 100
+   };
+   distancelabel.innerHTML =  "2点距离为"+getDistance(firstCoords, position.coords)+"km";
+   
 }
+
+
+
+
+
+//计算地图位置2点的位置
+function getDistance(startCoords, destCoords) {
+  var startLatRads = degreesToRadians(startCoords.latitude);
+  var startLongRads = degreesToRadians(startCoords.longitude);
+  var destLatRads = degreesToRadians(destCoords.latitude);
+  var destLongRads = degreesToRadians(destCoords.longitude);
+
+  var Radius = 6371; // radius of the Earth in km
+  var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
+          Math.cos(startLatRads) * Math.cos(destLatRads) *
+          Math.cos(startLongRads - destLongRads)) * Radius;
+
+  return distance;
+}
+
+function degreesToRadians(degrees) {
+  radians = (degrees * Math.PI)/180;
+  return radians;
+}
+
+

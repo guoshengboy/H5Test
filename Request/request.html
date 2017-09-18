@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>request</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="http://127.0.0.1/222222.js"></script>
+</head>
+<body>
+    <div id="personlist">
+
+    </div>
+    <input type="button" value="请求" onclick="getData()">
+    <script type="text/javascript">
+        //请求数据， XMLRequest不能请求当前域名以外的请求（XMLRequest不能跨域请求）
+    	function getData() {
+    		var url = "http://127.0.0.1/111111.txt";
+    		var request = new XMLHttpRequest();
+    		request.open("GET", url);
+    		request.onload = function () {
+    			if (request.status == 200) {//接收到了数据
+                    handleResponse(request.responseText);
+    			} else {
+                    alert("请求失败");
+    			}
+    		}
+    		request.send(null);
+    	}
+
+        //处理返回数据
+    	function handleResponse(response) {
+    		alert("response:"+response);
+    		var personArray = JSON.parse(response);
+            var personDiv = document.getElementById('personlist');
+            for (var i = 0; i < personArray.length; i++) {
+            	var person = personArray[i];
+            	var p = document.createElement("p");
+            	p.setAttribute("class","personItem");
+            	p.innerHTML = "name:" + person.name + " " + "age:"+  person.age + " " + "height:" + person.height;
+            	personDiv.appendChild(p);
+            }
+    	}
+
+        //person类
+    	function Person(name, age, height) {
+    		this.name = name;
+    		this.age = age;
+    		this.height = height;
+    	}
+    </script>
+</body>
+</html>

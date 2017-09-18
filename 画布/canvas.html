@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>画布</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		canvas{
+			border: 1px solid red;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var canvas = document.getElementById('aCanvas');
+			//获取画布的上下文
+			var context = canvas.getContext("2d");
+			context.fillRect(10, 10, 100, 100);
+		}
+	</script>
+</head>
+<body>
+	<!--画布默认 width：300 height:150-->
+    <canvas id="aCanvas" width="600" height="300">
+    	尊敬的用户，请升级最新浏览器版本才支持此功能！
+    </canvas>
+</body>
+</html>

@@ -14,7 +14,36 @@
 			//获取画布的上下文
 			var context = canvas.getContext("2d");
 			context.fillRect(10, 10, 100, 100);
+
+			var button = document.getElementById('previewButton');
+			button.onclick = previewHandler;
 		}
+        // 处理预览
+		function previewHandler() {
+			
+		}
+
+		function getBgColor{
+			var bgColorSelect = document.getElementById('backgroundColor');
+			var bgColorIndex = bgColorSelect.selectedIndex;
+			var bgColor = bgColorSelect[bgColorIndex].value;
+			return bgColor;
+		}
+
+		function getShape{
+			var bgColorSelect = document.getElementById('shape');
+			var bgColorIndex = bgColorSelect.selectedIndex;
+			var bgColor = bgColorSelect[bgColorIndex].value;
+			return bgColor;
+		}
+
+		function getFgColor{
+			var bgColorSelect = document.getElementById('foregroundColor');
+			var bgColorIndex = bgColorSelect.selectedIndex;
+			var bgColor = bgColorSelect[bgColorIndex].value;
+			return bgColor;
+		}
+
 	</script>
 </head>
 <body>

@@ -1,0 +1,69 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/index/index",
+    "pages/order/service-detail/service-detail",
+    "pages/order/list/list",
+    "pages/shoppingCart/shoppingCart",
+    "pages/my/my",
+    "pages/hospitalList/hospitalList",
+    "pages/login/login",
+    "pages/menu/list/list",
+    "pages/menu/detail/detail",
+    "pages/order/detail/detail",
+    "pages/order/confirm/confirm",
+    "pages/order/serviceConfirm/serviceConfirm",
+    "pages/address/list/list",
+    "pages/address/modify/modify",
+    "pages/address/select/select",
+    "pages/personal/personal/personal",
+    "pages/personal/changeMobile/changeMobile",
+    "pages/personal/changeName/changeName",
+    "pages/service/refund/refund",
+    "pages/service/refund-success/refund-success",
+    "pages/service/receive/receive",
+    "pages/bill/list/list",
+    "pages/bill/detail/detail",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundColor": "#5089fc",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#5089fc",
+    "navigationBarTitleText": "天下医家+",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#5292FA",
+    "borderStyle": "#d8d8d8",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/images/home.png",
+        "selectedIconPath": "assets/images/home_select.png"
+      },
+      {
+        "pagePath": "pages/order/list/list",
+        "text": "订单",
+        "iconPath": "assets/images/order.png",
+        "selectedIconPath": "assets/images/order_select.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "assets/images/shopping.png",
+        "selectedIconPath": "assets/images/shopping_select.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "assets/images/my.png",
+        "selectedIconPath": "assets/images/my_select.png"
+      }
+    ]
+  }
+}

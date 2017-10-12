@@ -1,0 +1,25 @@
+.hos-header-box {
+  width: 80%;
+  min-height: 100rpx;
+  display: flex;
+  font-size: 28rpx;
+  color: #333;
+  flex-direction: row;
+  align-items: center;
+}
+
+.hos-header-img {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 20rpx;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  border: 1rpx solid #d8d8d8;
+}
+
+.hos-header-text{
+  width: 90%;
+  line-height: 28rpx;
+  /*height: 28rpx;*/
+}

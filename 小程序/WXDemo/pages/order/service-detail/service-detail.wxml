@@ -1,0 +1,107 @@
+<scroll-view>
+  <view class="container" style="padding-bottom:120rpx;">
+    <view class="item-box">
+      <view>
+        <view class="detail-header-box" wx:if="{{bean.flow_status=='0'}}">
+          订单已取消
+          <text class="common-text common-margin">您的订单已经取消，期待您下次使用</text>
+        </view>
+        <view class="detail-header-box" wx:elif="{{bean.flow_status=='1'}}">
+          订单待支付
+          <text class="common-text common-margin">订单将于{{time}}关闭</text>
+          <text class="cancel-box common-margin" bindtap="cancelOrder">取消订单</text>
+        </view>
+
+        <view class="detail-header-box" wx:elif="{{bean.flow_status=='2'}}">已支付
+          <text class="cancel-box common-margin" bindtap="refund">退款</text>
+        </view>
+
+        <view class="detail-header-box" wx:elif="{{bean.flow_status=='3'}}">订单服务中
+          <text class="common-text common-margin">订单正在服务中</text>
+          <text class="cancel-box common-margin" bindtap="refund">退款</text>
+        </view>
+
+        <view class="detail-header-box" wx:elif="{{bean.flow_status=='6'}}">订单退款中
+          <text class="common-text common-margin">订单正在退款中</text>
+          <text class="cancel-box common-margin" bindtap="viewRefund">查看退款</text>
+        </view>
+
+        <view class="detail-header-box" wx:else>订单已完成
+          <text class="common-text common-margin">您的订单已经完成，期待您下次使用</text>
+        </view>
+      </view>
+
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+
+      <view class="hos-header-box border-bottom" style="margin-left: 20rpx; width: 95%">
+        <image style="height: 49rpx; width: 42rpx; margin-right: 20rpx;" src="../../../assets/images/confirm_loc.png" />
+        <text class="hos-header-text single-line">{{bean.hospital_block_name.length?bean.hospital_block_name:bean.hospital_name}}</text>
+      </view>
+      <view class="address-box">
+        <view class="address-text-box">
+          <text>{{ bean.book_username }} {{ bean.gender == '2' ? '女士' : '先生' }} {{ bean.book_mobile }}</text>
+          <text class="address-content-text">{{ bean.ward_name}} {{ bean.building_name }} {{ bean.floors}} {{ bean.bed}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-data-img.png" mode="aspectFit"></image>
+      <view class="cost-box widget-box border-bottom height-98">
+        <text class="hint-text">患者姓名</text>
+        <text>{{bean.book_username}}</text>
+      </view>
+      <view class="cost-box widget-box height-98">
+        <text class="hint-text">联系方式</text>
+        <text>{{bean.book_mobile}}</text>
+      </view>
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="cost-box widget-box">
+        <text class="hint-text">性别</text>
+        <text>{{bean.gender == '2' ? '女士' : '先生'}}</text>
+      </view>
+      <view class="cost-box widget-box">
+        <text class="hint-text">服务开始时间</text>
+        <text>{{startTime}}</text>
+
+      </view>
+      <view class="cost-box widget-box">
+        <text class="hint-text">服务结束时间</text>
+        <text>{{endTime}}</text>
+      </view>
+      <view class="cost-box widget-box">
+        <text class="hint-text">备注</text>
+        <text>{{bean.remark}}</text>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-price-img.png" mode="aspectFit"></image>
+      <view class="cost-box">
+        <text>服务价格</text>
+        <text>￥{{bean.amount}}</text>
+      </view>
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="item-foot">
+        <text>实付 </text>
+        <text style="color:#ff0606">￥{{bean.money_paid}}</text>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <view class="cost-box border-bottom" style="height:98rpx; padding:0">
+        <text>支付方式</text>
+        <text>微信支付</text>
+      </view>
+      <view class="cost-box" style="margin-top:5rpx">订单编号：{{bean.order_sn}}</view>
+      <view class="cost-box">下单时间：{{createTime}}</view>
+      <view class="cost-box" hidden="{{payTime == null}}">支付时间：{{payTime}}</view>
+      <view class="cost-box" hidden="{{cancelTime == null}}">取消时间：{{cancelTime}}</view>
+      <view class="cost-box" hidden="{{refundTime == null}}">退款时间：{{refundTime}}</view>
+      <view class="cost-box" hidden="{{finishTime == null}}">完成时间：{{finishTime}}</view>
+    </view>
+  </view>
+</scroll-view>
+<image class="pay" src="../../../assets/images/pay.png" wx:if="{{bean.flow_status=='1'}}"></image>
+<image class="pay" src="../../../assets/images/confirm_order.png" wx:elif="{{bean.is_lobby==0 &&  bean.flow_status=='3'}}" bindtap="finishOrder"></image>
+<image class="pay" src="../../../assets/images/cancel_refund.png" wx:elif="{{bean.flow_status=='6'}}" bindtap="cancelRefund"></image>

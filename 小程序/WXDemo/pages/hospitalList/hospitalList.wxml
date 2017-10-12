@@ -1,0 +1,7 @@
+<!--pages/hospitalList/hospitalList.wxml-->
+
+<block wx:for="{{list}}">
+  <view class="content single-line white-bg" catchtap="navigateTo" data-index="{{ index }}">
+    {{item.hospital_name}}
+  </view>
+</block>

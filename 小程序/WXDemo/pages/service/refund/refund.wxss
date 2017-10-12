@@ -1,0 +1,35 @@
+.item-box {
+  width: 97%;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 5rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-bottom: 30rpx;
+}
+
+.input-box {
+  height: 70rpx;
+  width: 270rpx;
+  margin-left: 36rpx;
+  margin-right: 20rpx;
+  border: solid 1rpx #f0f0f0;
+  text-align: center;
+  color: #666;
+}
+
+.img {
+  margin-top: 220rpx;
+  width: 696rpx;
+  height: 106rpx;
+}
+
+.content-box {
+  justify-content: flex-end;
+  margin-right: 80rpx;
+  text-align: right;
+}

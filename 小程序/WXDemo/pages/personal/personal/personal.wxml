@@ -1,0 +1,16 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+  <view class="white-bg" style="padding-left:30rpx; margin-top: 20rpx; width:96%">
+    <view class="cost-box  border-bottom box">
+      <text style="width:140rpx">手机号:</text>
+      <text class="content-text">{{mobile}}</text>
+      <!--<image class="content-arrow" src="../../../assets/images/arrow_grey.png"></image>-->
+    </view>
+  </view>
+
+  <view class="cost-box white-bg border-bottom box" style="padding-left:30rpx; width: 96%;" bindtap="changeName">
+    <text style="width:140rpx">名称:</text>
+    <text class="content-text">{{name}}</text>
+    <image class="content-arrow" src="../../../assets/images/arrow_grey.png"></image>
+  </view>
+</view>

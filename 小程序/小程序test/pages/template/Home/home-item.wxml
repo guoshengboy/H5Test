@@ -1,0 +1,6 @@
+<template name="canteen-item">
+  <view class="content-bg  {{index%2==0?'bg_yellow':'bg_green'}}">
+    <image class="canteen-icon icon-frame" src="{{item.icon}}"></image>
+    <text class='canteen-title'>{{item.title}}</text>
+  </view>
+</template>

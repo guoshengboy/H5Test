@@ -1,0 +1,13 @@
+<!--pages/address/list/list.wxml-->
+<import src="../../template/address/address_item" />
+<import src="../../template/prompt.wxml" />
+<view>
+  <view class="container" style="padding-bottom:200rpx;">
+    <block wx:for="{{list}}">
+      <template is="address_item" data="{{item, index}}"></template>
+    </block>
+    <template is="prompt" data="{{ prompt }}" />
+
+    <image src="../../../assets/images/add_address.png" class="add-img" bindtap="addAddress"></image>
+  </view>
+</view>

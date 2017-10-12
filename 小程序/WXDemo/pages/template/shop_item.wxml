@@ -1,0 +1,21 @@
+<import src="prompt.wxml" />
+
+<template name="shop_item">
+  <view class="title-box white-bg">
+    <image style="height: 31rpx" src="../../assets/images/index_title.png" mode="aspectFit" />
+  </view>
+  <view>
+    <block wx:for="{{list.data}}">
+      <view class="shop white-bg" catchtap="clickItem" data-index="{{ index }}">
+        <image class="img" src="{{ item.logo }}" mode="scaleToFill" />
+        <view class="index-item-text-box">
+          <text class="title-text single-line" style="line-height: 30rpx;">{{ item.supplier_name }}</text>
+          <text class="content-box">{{ item.introduce }}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="white-bg" style="flex-grow:1">
+    <template is="prompt" data="{{ prompt }}" />
+  </view>
+</template>

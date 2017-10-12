@@ -1,0 +1,32 @@
+/* pages/login/login.wxss */
+
+.input-box {
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  font-size: 32rpx;
+  color: #333;
+  border-bottom: 1px #5191fa solid;
+  text-align: bottom;
+  width: 90%;
+  margin-top: 55rpx;
+}
+
+.img {
+  margin-top: 150rpx;
+  height: 106rpx;
+  width: 696rpx;
+}
+
+.get-code {
+  width: 190rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #5191fa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx #5191fa solid;
+  border-radius: 8rpx;
+  margin-right: 40rpx;
+}

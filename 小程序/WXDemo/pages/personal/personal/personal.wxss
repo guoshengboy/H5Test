@@ -1,0 +1,21 @@
+/* pages/personal/personal.wxss */
+
+.content-arrow {
+  height: 26rpx;
+  width: 16rpx;
+  margin-right: 30rpx;
+}
+
+.content-text {
+  font-size: 28rpx;
+  color: #666;
+  flex-grow: 1;
+}
+
+.box {
+  height: 90rpx;
+  margin-right: 0;
+  width: 100%;
+  margin-left: 0rpx;
+  padding: 0;
+}

@@ -1,0 +1,73 @@
+/* pages/menu/list/list.wxss */
+page{
+  height: 100%;
+  background: #fff;
+}
+.item-box {
+  height: 220rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  justify-content: flex-start;
+}
+
+.item-img {
+  height: 180rpx;
+  width: 180rpx;
+  margin-right: 20rpx;
+  margin-left: 30rpx;
+}
+
+.item-text-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 69%;
+  font-size: 36rpx;
+  color: #f55356;
+}
+
+.item-title-text {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 30rpx;
+}
+
+.item-content-text {
+  font-size: 24rpx;
+  color: #999;
+  height: 48rpx;
+  width: 90%;
+  line-height: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 18rpx;
+  margin-bottom: 30rpx;
+}
+
+.add-btn {
+  text-align: right;
+  position: absolute;
+  align-self: flex-end;
+  right: 0;
+  bottom: 0;
+}
+
+.item-delete {
+  display: flex;
+  justify-content: space-between;
+  width: 230rpx;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+
+.item-add-img {
+  margin-right: 30rpx;
+  width:59rpx; 
+  height:59rpx
+}

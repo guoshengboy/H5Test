@@ -1,0 +1,8 @@
+<template name="not_login">
+  <image style="width: 160rpx; height: 160rpx; margin-top: 150rpx; margin-bottom: 30rpx" src="/assets/images/logo.png"></image>
+  <text class="title-text" style="margin-bottom: 50rpx">{{msg||'您还没有登录，请登录后重试'}}</text>
+  <navigator url="/pages/login/login" hover-class="navigator-hover">
+    <image style="height: 106rpx;" src="/assets/images/login_btn_select.png" mode="aspectFit"></image>
+  </navigator>
+
+</template>

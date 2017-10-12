@@ -26,14 +26,35 @@
 					// drawSquare 绘制正方形
 					drawSquare(canvas, context);
 				}
+			}else if (shape == "circles"){
+				for (var i = 0; i < 5; i++) {
+					// drawCircles 绘制圆形
+					drawCircles(canvas, context);
+				}
 			}
 
 		}
+        //绘制圆形 
+        function drawCircles(canvas, context) {
+            var radius = Math.floor(Math.random()*40);
+            var  x = Math.random()*canvas.width;
+            var  y = Math.random()*canvas.height;
+         	context.beginPath();
+         	context.arc(x, y, radius, 0, Math.PI*2, true);
+            context.closePath();
+            context.fillStyle = "lightblue";
+            context.fill();
+
+         }
+
+
+
         // 绘制正方形
 		function drawSquare(canvas, context) {
 			var  w = Math.floor(Math.random()*40);
             var  x = Math.random()*canvas.width;
             var  y = Math.random()*canvas.height;
+            //填充的颜色
             context.fillStyle="#0000ff";
             context.fillRect(x, y, w, w);
 		}

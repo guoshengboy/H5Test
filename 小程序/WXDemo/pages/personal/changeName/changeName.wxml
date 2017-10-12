@@ -1,0 +1,14 @@
+<form bindsubmit="submitForm">
+  <view class="container">
+    <view class="border-bottom white-bg box" bindtap="changeMobile">
+      <text style="width:150rpx">姓名:</text>
+      <input class="content-text" type="text" placeholder="请输入姓名" name="name" value="{{form.name}}" bindinput="nameChange"></input>
+      <image class="content-arrow" src="../../../assets/images/clear.png" bindtap="clear"></image>
+    </view>
+
+<button id="form-btn" formType="submit" plain="true">
+      <image class="img" src="../../../assets/images/submit_enable.png" wx:if="{{canSubmit}}"></image>
+    </button>
+    <image class="img" src="../../../assets/images/submit.png" formType="submit" hidden="{{canSubmit}}"></image>
+  </view>
+</form>

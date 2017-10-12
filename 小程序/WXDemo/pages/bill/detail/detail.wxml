@@ -1,0 +1,34 @@
+<view class="container-box">
+  <view class="money-box border-bottom">
+    交易金额
+    <text class="money-text">￥{{bean.money_paid}}</text>
+  </view>
+  <view class="content-box">
+    类型
+    <text class="money-text">{{bean.name}}</text>
+  </view>
+  <view class="content-box">
+    当前状态
+    <text class="money-text"  wx:if="{{bean.status!='2' && bean.status!='3'}}">支付成功</text>
+    <text class="money-text refund-text"  wx:else>已退款(￥{{bean.money}})</text>
+  </view>
+
+<view class="content-box"  wx:if="{{bean.status=='2' || bean.status=='3'}}">
+    退款明细
+    <text class="money-text refund-text">院内充值(￥{{bean.money}})</text>
+  </view>
+  <text class="refund-box"  wx:if="{{bean.status=='2' || bean.status=='3'}}">现金充值(￥{{bean.money}})</text>
+  <text class="refund-box"  wx:if="{{bean.status=='2' || bean.status=='3'}}">线上充值(￥{{bean.money}})</text>
+  <view class="content-box">
+    时间
+    <text class="money-text">{{bean.time}}</text>
+  </view>
+  <view class="content-box">
+    支付方式
+    <text class="money-text">{{bean.type}}</text>
+  </view>
+  <view class="content-box">
+    订单编号
+    <text class="money-text">{{bean.order_sn}}</text>
+  </view>
+</view>

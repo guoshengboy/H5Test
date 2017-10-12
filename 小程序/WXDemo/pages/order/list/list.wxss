@@ -1,0 +1,56 @@
+/* pages/order/order.wxss */
+
+.detail-left {
+  padding-left: 90rpx;
+  margin-bottom: 15rpx;
+}
+
+.detail-right {
+  padding-right: 30rpx;
+}
+
+.hos-header {
+  height: 100rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  align-items: center;
+  margin-bottom: 30rpx;
+  justify-content: space-between;
+}
+
+.money-text {
+  font-size: 32rpx;
+  color: #f55356;
+}
+
+.title-text.title-text-28 {
+  font-size: 28rpx;
+}
+
+.blue-text {
+  font-size: 28rpx;
+  color: #5292fa;
+}
+
+.pay-btn {
+  border: 1rpx solid #5292fa;
+  border-radius: 5rpx;
+  height: 60rpx;
+  width: 280rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.msg-box {
+  height: 96rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+
+.service-money-text {
+  position: absolute;
+  right: 0rpx;
+  bottom: 30rpx;
+}

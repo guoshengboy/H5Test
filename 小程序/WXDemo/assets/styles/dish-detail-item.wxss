@@ -1,0 +1,23 @@
+.dish-detail-box {
+  background-color: #fbfbfb;
+  height: 138rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.dish-detail-img {
+  width: 110rpx;
+  height: 110rpx;
+  margin-right: 20rpx;
+  flex: 0 0 auto;
+}
+
+.dish-detail-num {
+  align-self: flex-start;
+  margin-top: 28rpx;
+}

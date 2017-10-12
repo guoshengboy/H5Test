@@ -1,0 +1,97 @@
+<!--pages/order/confirm/confirm.wxml-->
+<import src="../../template/hos_header.wxml" />
+<import src="../../template/shopping_cart/shopping_detail.wxml" />
+
+<scroll-view>
+  <view class="container" style="padding-bottom:120rpx;">
+    <view class="item-box">
+      <view class="hos-header-box border-bottom" style="margin-left: 20rpx; width: 95%">
+        <image style="height: 49rpx; width: 42rpx; margin-right: 20rpx;" src="../../../assets/images/confirm_loc.png" />
+        <view class="hos-block-box" wx:if="{{hospitalConfig.hospital_subordinate.length>0}}">
+          <picker style="flex-grow:1;" bindchange="hosChange" value="{{hosIndex}}" range="{{hospitalConfig.hospital_subordinate}}" class="choose-text" range-key="name">
+            <text class="hos-picker-text" wx:if="{{hosIndex==-1}}">请选择医院院区</text>
+            <view class="hos-picker-text picker-text single-line" wx:else>
+              {{hospitalConfig.hospital_subordinate[hosIndex].name}}
+            </view>
+          </picker>
+          <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+        </view>
+        <text class="hos-header-text single-line" wx:else>{{hospital_name}}</text>
+      </view>
+
+      <view class="address-box" bindtap="clickAddress">
+        <text wx:if="{{address == null}}">选择收货地址</text>
+
+        <view class="address-text-box" wx:else>
+          <text>{{ address.username }} {{ address.gender == '2' ? '女士' : '先生' }} {{ address.mobile }}</text>
+          <text class="address-content-text">{{ address.ward_name}} {{ address.building_name }} {{ address.floors}} {{ address.bed}}</text>
+        </view>
+
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+    </view>
+
+    <view class="item-box" style="position:relative;">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-data-img.png" mode="aspectFit"></image>
+      <view class="cost-box widget-box border-bottom">
+        <text class="hint-text">患者姓名</text>
+        <text class="{{address==null?'choose-text':''}}">{{address==null? '请输入姓名':address.username}}</text>
+      </view>
+      <view class="cost-box widget-box">
+        <text class="hint-text">联系方式</text>
+        <text class="{{address==null?'choose-text':''}}">{{address==null? '请输入联系方式':address.mobile}}</text>
+      </view>
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="cost-box widget-box border-bottom">
+        <text class="hint-text">性别</text>
+        <text class="{{address==null?'choose-text':''}}">{{address==null? '请输入性别':(address.gender == '2' ? '女士' : '先生')}}</text>
+      </view>
+      <view class="cost-box widget-box border-bottom">
+        <text class="hint-text">服务开始时间</text>
+        <picker mode="date" bindchange="startChange" class="choose-text">
+          <text wx:if="{{startDate.length <= 0}}">请选择入院时间</text>
+          <view class="picker-text" wx:else>
+            {{startDate}}
+          </view>
+        </picker>
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+      <view class="cost-box widget-box">
+        <text class="hint-text">服务结束时间</text>
+        <picker mode="date" bindchange="endChange" class="choose-text">
+          <text wx:if="{{endDate.length <= 0}}">请选择出院时间</text>
+          <view class="picker-text" wx:else>
+            {{endDate}}
+          </view>
+        </picker>
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+      <textarea class="choose-text textarea-box" type="text" placeholder-style="color:#999" placeholder="填写服务备注" bindinput="remarkChange" maxlength="50"></textarea>
+      <text class="limit-num-text">{{textnum}}/50</text>
+    </view>
+
+    <view class="item-box">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-price-img.png" mode="aspectFit"></image>
+      <view class="cost-box">
+        <text>服务价格</text>
+        <text>￥{{total}}</text>
+      </view>
+
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="item-foot">
+        <text>实付 </text>
+        <text style="color:#ff0606">￥{{total}}</text>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-payment-img.png" mode="aspectFit"></image>
+      <view class="cost-box widget-box" style="height:100rpx; border-top:solid 1rpx #f0f0f0;">
+        <image src="../../../assets/images/wechat_logo.png" style="flex:0 1 atuo;width:50rpx;height:41rpx;margin-right:26rpx;margin-left:15rpx;"></image>
+        <text style="flex-grow:1 ;">微信支付</text>
+        <image src="../../../assets/images/pay_type_select.png" style="flex:0 1 atuo;width:40rpx;height:40rpx;"></image>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<image class="pay" src="../../../assets/images/pay.png" bindtap="createOrder"></image>

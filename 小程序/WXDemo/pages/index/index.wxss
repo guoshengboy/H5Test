@@ -1,0 +1,116 @@
+/**index.wxss**/
+
+.loc-fail {
+  /* display: flex;
+  align-items: center; 垂直居中
+  justify-content: center; /*水平居中*/
+  width: 195rpx;
+  height: 195rpx;
+  margin-top: 230rpx;
+}
+
+.loc-fail-text {
+  text-align: center;
+  font-size: 32rpx;
+  color: #acacac;
+  margin-top: 36rpx;
+  margin-bottom: 120rpx;
+}
+
+.loc-header {
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center; /*垂直居中*/
+  justify-content: flex-start;
+  width: 96%;
+  color: #333;
+  font-size: 28rpx;
+  padding-right: 30rpx;
+}
+
+.img {
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx solid #d8d8d8;
+  border-radius: 5rpx;
+  margin-right: 30rpx;
+}
+
+.shop {
+  padding-left: 30rpx;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 1px solid #d8d8d8;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.shop:last-child {
+  border-bottom: none;
+}
+
+.content-box {
+  width: 90%;
+  line-height: 36rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-top: 18rpx;
+  color: #999;
+  font-size: 24rpx;
+}
+
+.title-box {
+  height: 74rpx;
+  min-height: 74rpx;
+  border-top: 20rpx solid #f1f1f1;
+  width: 100%;
+  border-bottom: 1rpx solid #d8d8d8;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*垂直居中*/
+  justify-content: center;
+}
+
+.swiper-box {
+  width: 100%;
+  height: 270rpx;
+}
+
+.loc-left-img {
+  width: 28rpx;
+  height: 34rpx;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+}
+
+.container-box {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;*/
+}
+
+.index-item-text-box {
+  display: flex;
+  flex-direction: column;
+  width: 76%;
+}
+
+.index-container-box {
+  display: flex;
+  flex-direction: column;
+  /*flex-grow: 1;*/
+  margin-top: 20rpx;
+  position: relative;
+  justify-content: flex-start;
+}

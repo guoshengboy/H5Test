@@ -1,0 +1,35 @@
+<import src="shopping_detail.wxml" />
+<import src="../prompt.wxml" />
+<import src="../hos_header.wxml" />
+
+<template name="shopping_item">
+  <block wx:for="{{list}}">
+    <view class="flex-wrap flex-direction-col white-bg item-box">
+      <view class="flex-wrap  flex-direction-row hos-header margin-bottom">
+        <view class="hos-header-box">
+          <image class="hos-header-img" src="{{item.logo}}" mode="scaleToFill" />
+          <text class="hos-header-text">{{hospital_name}}{{item.supplier_name}}</text>
+        </view>
+        <image src="../../../assets/images/delete.png" style="width: 26rpx; height: 26rpx" catchtap="clickClear" data-index="{{index}}" data-id="{{item.id}}"></image>
+      </view>
+      <block wx:for="{{item.shop_cart}}">
+        <template is="shopping_detail" data="{{item}}"></template>
+      </block>
+      <view class="cost-box">
+        <text>配送费</text>
+        <text>￥{{item.delivery_costs}}</text>
+      </view>
+      <view class="cost-box">
+        <text>包装费</text>
+        <text>￥{{item.lunch_box}}</text>
+      </view>
+      <image src="/assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="item-foot">
+        <text>合计：￥{{item.total}}</text>
+        <image src="/assets/images/shopping_cart_pay.png" style="width: 196rpx; height: 74rpx" catchtap="clickItem" data-index="{{index}}"></image>
+      </view>
+    </view>
+  </block>
+
+  <template is="prompt" data="{{ prompt }}" />
+</template>

@@ -1,0 +1,23 @@
+<template name="address_item">
+  <view class="item-box white-bg border-bottom">
+    <view class="item-text-box">
+      <text class="item-title-text item-title-out-text" wx:if="{{item.type == 2}}">{{item.hospital_name}}</text>
+      <text class="item-title-text" wx:else>{{item.hospital_name}}</text>
+      <text class="item-content-out-text" wx:if="{{item.type == 2}}">{{ item.ward_name}} {{ item.building_name }} {{ item.floors}}  {{ item.bed}} \n{{ item.username }} {{ item.gender == '2' ? '女士' : '先生' }} {{ item.mobile }}</text>
+      <text wx:else>{{ item.ward_name}} {{ item.building_name }} {{ item.floors}}  {{ item.bed}} \n{{ item.username }} {{ item.gender == '2' ? '女士' : '先生' }} {{ item.mobile }}</text>
+    </view>
+    <view class="flex-wrap flex-direction-row align-center" wx:if="{{item.type == 0}}">
+      <image class="item-modify-img" src="../../../assets/images/address_modify.png" catchtap="modifyAddress" data-id="{{item.id}}" data-index="{{index}}"></image>
+      <view class="item-line"></view>
+      <image class="item-delete-img" src="../../../assets/images/address_delete.png" catchtap="deleteAddress" data-id="{{item.id}}" data-index="{{index}}"></image>
+    </view>
+
+    <view class="select-box" wx:elif="{{item.type == 1}}" catchtap="selectAddress" data-id="{{item.id}}" data-index="{{index}}">选择</view>
+    <view wx:else></view>
+
+
+  </view>
+
+
+
+</template>

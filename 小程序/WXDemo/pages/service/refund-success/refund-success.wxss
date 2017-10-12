@@ -1,0 +1,35 @@
+/* pages/service/refund-success/refund-success.wxss */
+
+.success-img {
+  margin-top: 190rpx;
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 60rpx;
+}
+
+.img {
+  margin-top: 180rpx;
+  width: 696rpx;
+  height: 106rpx;
+}
+
+.hint-text {
+  font-size: 32rpx;
+  color: #6194fb;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.refund-text {
+  border: solid #333 1rpx;
+  border-radius: 5rpx;
+  height: 70rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 70rpx;
+  color: #333;
+  vertical-align: middle;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}

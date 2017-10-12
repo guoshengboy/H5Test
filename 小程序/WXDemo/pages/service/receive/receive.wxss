@@ -1,0 +1,29 @@
+/* pages/service/receive/receive.wxss */
+
+.item-box {
+  width: 97%;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 5rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.input-box {
+  height: 70rpx;
+  width: 270rpx;
+  margin-left: 36rpx;
+  margin-right: 20rpx;
+  border: solid 1rpx #f0f0f0;
+  text-align: center;
+}
+
+.img {
+  margin-top: 330rpx;
+  width: 696rpx;
+  height: 106rpx;
+}

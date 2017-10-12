@@ -1,0 +1,22 @@
+<import src="popup/popup.wxml" />
+
+<template name="settlement">
+
+  <view class="settlement-box" hidden="{{isService}}">
+    <image src="../../../assets/images/settlement.png" style="width: 63rpx; height: 56rpx; margin-left: 20rpx;  margin-right: 35rpx;flex-shrink:0" catchtap="popup"></image>
+    <text class="settlement-num">{{settlement.total_number}}</text>
+    <view class="container white-bg " style="flex-grow: 1; font-size: 22rpx; color: #999; justify-content: center; align-items: flex-start; margin-top: 20rpx; margin-bottom: 20rpx">
+      <view class="flex-wrap flex-direction-row" style="color: #3a3434; font-size: 28rpx;margin-bottom: 10rpx">
+        合计
+        <text style="color: #f55356; font-size: 28rpx">￥{{settlement.amount}}</text>
+      </view>
+      不含运送费
+    </view>
+
+    <image src="../../../assets/images/settlement_enable.png" wx:if="{{settlement.total_number}}" style="height: 100rpx; width: 239rpx; flex-shrink:0" bindtap="settlement"></image>
+    <image src="../../../assets/images/settlement_grey.png" style="height: 100rpx; width: 239rpx; flex-shrink:0" wx:else></image>
+
+  </view>
+  <template is="popup" data="{{settlement}}"></template>
+
+</template>

@@ -1,0 +1,10 @@
+<!--base.wxml-->
+
+<template name="abc">
+<view>this is a template</view>
+</template>
+
+
+<template is="abc"></template>
+
+<view>this  is a view</view>

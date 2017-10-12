@@ -1,0 +1,4 @@
+<view class="container-box">
+  <image class="wel_t" src="/assets/images/welcome_top.png"></image>
+  <image class="wel_bo" src="/assets/images/welcome_bottom.png" />
+</view>

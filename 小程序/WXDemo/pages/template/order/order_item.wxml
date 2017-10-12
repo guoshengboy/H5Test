@@ -1,0 +1,73 @@
+<import src="detail_item.wxml" />
+<import src="../prompt.wxml" />
+<import src="../hos_header.wxml" />
+<template name="order_item">
+  <block wx:for="{{list.data}}">
+    <view wx:if="{{item.canteen_type == 16}}" class="flex-wrap flex-direction-col white-bg" style="width: 100%; margin-bottom: 20rpx;padding-top:30rpx;" catchtap="clickItem" data-index="{{ index }}">
+      <view class="flex-wrap  flex-direction-row border-bottom margin-bottom" style="width: 92%;position:relative;padding-bottom:30rpx;padding-left:30rpx;padding-right:30rpx;">
+        <image class="dish-detail-img" src="{{item.menu[0].menu_thumb}}" mode="scaleToFill"></image>
+
+        <text class="title-text size-28" style="margin-top:12rpx;flex-grow:1">{{item.menu[0].menu_name}}</text>
+
+        <view>
+          <text class="title-text" wx:if="{{item.flow_status=='0'}}">已取消</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='1'}}">待支付</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='2'}}">已支付</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='3'}}">服务中</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='6'}}">退款中</text>
+          <text class="title-text" wx:else>已完成</text>
+        </view>
+        <view class="flex-wrap flex-direction-row-reverse detail-right service-money-text">
+          <text class="money-text">￥{{item.money_paid}}</text>
+          <text class="title-text title-text-28">实付 </text>
+        </view>
+      </view>
+
+      <view class="flex-wrap flex-direction-row-reverse msg-box align-center blue-text border-bottom" wx:if="{{item.flow_status=='1'}}" style="padding-left: 0; width: 96%">
+        <view class="pay-btn" catchtap="gotoPay" data-sn="{{item.order_sn}}" data-money="{{item.money_paid}}" data-type="{{item.canteen_type}}">去支付(15分钟以内)</view>
+      </view>
+    </view>
+
+    <view wx:else class="flex-wrap flex-direction-col white-bg" style="width: 100%; margin-bottom: 20rpx" catchtap="clickItem" data-index="{{ index }}">
+      <view class="flex-wrap  flex-direction-row hos-header border-bottom margin-bottom">
+        <template is="hos_header" data="{{...item.supplier}}"></template>
+        <view>
+          <text class="title-text" wx:if="{{item.flow_status=='0'}}">已取消</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='1'}}">待付款</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='2'}}">已支付</text>
+          <text class="title-text" wx:elif="{{item.flow_status=='3'}}">配送中</text>
+          <text class="title-text" wx:else>已完成</text>
+        </view>
+      </view>
+
+      <block wx:for="{{item.menu}}" wx:if="{{index < 3}}">
+        <template is="detail_item" data="{{...item}}"></template>
+      </block>
+      <text class="detail-left common-text" hidden="{{item.menu.length <= 3}}">...</text>
+
+      <view class="flex-wrap flex-direction-row-reverse detail-right border-bottom" style="padding-bottom: 28rpx">
+        <text class="money-text">￥{{item.money_paid}}</text>
+        <text class="title-text title-text-28"> 共{{item.total_number}}件商品，实付 </text>
+      </view>
+
+      <view class="flex-wrap flex-direction-row-reverse msg-box align-center blue-text border-bottom" wx:if="{{item.flow_status=='1'}}" style="padding-left: 0; width: 96%">
+        <view class="pay-btn" catchtap="gotoPay" data-sn="{{item.order_sn}}" data-money="{{item.money_paid}}" data-type="{{item.canteen_type}}">去支付(15分钟以内)</view>
+      </view>
+
+      <view class="flex-wrap flex-direction-row msg-box blue-text align-center border-bottom" wx:elif="{{item.is_lobby==0 &&  item.flow_status=='2'}}" style="width: 92%">
+        订单将于{{item.delivery_time}}配送
+      </view>
+
+      <view class="flex-wrap flex-direction-row-reverse msg-box align-center blue-text border-bottom" wx:elif="{{item.is_lobby==0 &&  item.flow_status=='3'}}" style="padding-left: 0; width: 96%">
+        <view class="pay-btn" catchtap="finishOrder" data-sn="{{item.order_sn}}" data-index="{{index}}">确认订单</view>
+      </view>
+
+      <view class="flex-wrap flex-direction-row msg-box blue-text align-center border-bottom" wx:elif="{{item.is_lobby==1 && (item.flow_status=='3' || item.flow_status=='2')}}" style="width: 92%">
+        定点自取
+      </view>
+      <view wx:else></view>
+    </view>
+  </block>
+
+  <template is="prompt" data="{{ prompt }}" />
+</template>

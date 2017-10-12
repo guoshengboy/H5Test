@@ -1,0 +1,6 @@
+<template name="hos_header">
+  <view class="hos-header-box">
+    <image class="hos-header-img" src="{{logo}}" mode="scaleToFill" />
+    <text class="hos-header-text single-line">{{hospital_name}}{{supplier_name}}</text>
+  </view>
+</template>

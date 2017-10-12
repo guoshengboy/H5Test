@@ -1,0 +1,49 @@
+/* pages/Home/home/home.wxss */
+
+/* 
+ .section-item{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.flex-item{ 
+  width: 100px;
+  height: 100px;
+}
+
+.bc_green{
+  background-color: green;
+}
+
+.bc_red{
+  background-color: red;
+}
+
+.bc_blue{
+  background-color: blue;
+}  */
+
+
+.container-list{
+  display: flex;
+  flex-direction: column; 
+}
+
+.content-bg{
+  width: 80%;
+}
+
+
+.bg_yellow{
+  background-color: yellow;
+}
+
+.bg_green{
+  background-color: green;
+}
+
+.icon-frame{
+  width: 80px;
+  height: 80px;
+}

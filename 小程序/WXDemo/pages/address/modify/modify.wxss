@@ -1,0 +1,83 @@
+/* pages/address/modify/modify.wxss */
+
+.hint-text {
+  color: #333;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  width: 130rpx;
+}
+
+.box {
+  height: 88rpx;
+  color: #666;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  background: #fff;
+  justify-content: flex-start;
+}
+
+.content-hint-text {
+  color: #d1d1d1;
+}
+
+.save {
+  width: 100%;
+  height: 98rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0;
+}
+
+.radio {
+  color: #d1d1d1;
+  font-size: 28rpx;
+  width: 126rpx;
+  height: 50rpx;
+  border: 1rpx #d7d7d7 solid;
+  border-radius: 5px;
+  margin-right: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-enable {
+  color: #5292fa;
+  border: 1rpx #5292fa solid;
+}
+
+.radio-default {
+  position: absolute;
+  left: -9999px;
+}
+
+.radio-group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: #fff;
+  justify-content: flex-start;
+}
+
+.picker-box{
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  height: 100%;
+  flex-grow: 1;
+}
+
+.picker-content{
+  /*width: 590rpx;*/
+  height: 100%;
+  display: inline-block;
+  min-height: 88rpx;
+  line-height: 88rpx;
+  vertical-align: middle;
+}

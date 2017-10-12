@@ -1,0 +1,10 @@
+<template name="shopping_detail">
+  <view class="dish-detail-box">
+    <image src="{{item.menu_original}}" class="dish-detail-img" mode="scaleToFill"></image>
+    <view class="flex-wrap flex-direction-col" style="flex-grow: 1">
+      <text class="title-text size-28 single-line">{{item.menu_name}}</text>
+      <text style="font-size: 22rpx; color: #999; margin-top:20rpx">×{{ item.number }}</text>
+    </view>
+    <text class="dish-detail-num title-text size-28">￥{{item.menu_price}}</text>
+  </view>
+</template>

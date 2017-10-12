@@ -1,0 +1,30 @@
+/* pages/shoppingCart/shoppingCart.wxss */
+
+.hos-header {
+  min-height: 100rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-foot {
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  color: #ff0606;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.item-box {
+  width: 97%;
+  margin-bottom: 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 5rpx;
+}

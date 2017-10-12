@@ -1,0 +1,19 @@
+<import src="../hos_header.wxml" />
+<import src="menu_item.wxml" />
+<import src="../prompt.wxml" />
+
+<template name="menu_list">
+  <view class="border-bottom" style="width: 96%; padding-left: 30rpx">
+    <view class="hos-header-box">
+      <image class="hos-header-img" src="{{logo}}" mode="scaleToFill" />
+      <text class="hos-header-text">{{hospital_name}}{{supplier_name}}</text>
+    </view>
+  </view>
+
+  <block wx:for="{{list}}">
+    <template is="menu_item" data="{{...item, index, isService}}"></template>
+  </block>
+
+  <template is="prompt" data="{{ prompt }}" />
+
+</template>

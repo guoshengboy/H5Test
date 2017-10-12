@@ -1,0 +1,20 @@
+<!--pages/login/login.wxml-->
+<form bindsubmit="submitForm">
+  <view class="container white-bg">
+    <image style="width:160rpx; height:160rpx;margin-top:96rpx;" src="/assets/images/logo.png "></image>
+
+    <view class="input-box flex-direction-row flex-wrap">
+      <input type="number" placeholder="请输入手机号" name="mobile" value="{{form.mobile}}" bindinput="mobileChange" style="flex-grow: 1"></input>
+      <view class="get-code" bindtap="getCode">
+        {{codeSecond}}</view>
+    </view>
+
+    <input class="input-box" type="number" placeholder="请输入验证码" name="code" value="{{form.code}}" bindinput="codeChange"></input>
+    <button id="form-btn" formType="submit" plain="true">
+      <image class="img" src="../../assets/images/login_btn_select.png" wx:if="{{canLogin}}"></image>
+    </button>
+
+    <image class="img" src="../../assets/images/login_btn.png" hidden="{{canLogin}}"></image>
+
+  </view>
+</form>

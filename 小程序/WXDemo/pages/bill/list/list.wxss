@@ -1,0 +1,36 @@
+.bill-item-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 36rpx;
+  color: #333;
+  width: 92%;
+  padding: 30rpx;
+  flex-direction: row;
+}
+
+.bill-content-box {
+  display: flex;
+  flex-grow: 1;
+  font-size: 28rpx;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.bill-refund-text {
+  color: #ff5416;
+  margin-top: 5rpx;
+}
+
+.bill-time-text {
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.content-arrow {
+  height: 26rpx;
+  width: 16rpx;
+  margin-left: 14rpx;
+  flex-flow: 1;
+}

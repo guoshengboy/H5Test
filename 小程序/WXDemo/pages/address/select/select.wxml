@@ -1,0 +1,29 @@
+<import src="../../template/address/address_item" />
+<import src="../../template/prompt.wxml" />
+<view>
+  <view class="container" style="padding-bottom:200rpx;">
+    <block wx:for="{{range}}">
+      <template is="address_item" data="{{item, index }}"></template>
+    </block>
+
+    <view class="no-range-box" hidden="{{rangEmpty}}">
+      <image src="/assets/images/loc.png" style="height:195rpx; margin-top: 86rpx" mode="aspectFit" />
+      <text>暂无可派送有效地址\n点击右下角新建添加</text>
+    </view>
+
+    <view class="container" wx:if="{{canShow}}">
+      <view class="container" wx:if="{{showOut}}">
+        <view class="out-hint-box border-bottom white-bg">以下地址超出配送范围</view>
+        <block wx:for="{{out}}">
+          <template is="address_item" data="{{item, index }}"></template>
+        </block>
+        <image class="pack-up-img" src="../../../assets/images/pack_up.png" bindtap="pickUp"></image>
+      </view>
+      <image class="pack-up-img" src="../../../assets/images/open.png" bindtap="open" wx:else></image>
+    </view>
+
+    <image src="../../../assets/images/add_address.png" class="add-img" bindtap="addAddress"></image>
+    <template is="prompt" data="{{ prompt }}" />
+
+  </view>
+</view>

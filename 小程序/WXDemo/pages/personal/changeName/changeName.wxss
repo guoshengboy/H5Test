@@ -1,0 +1,31 @@
+/* pages/personal/changeName/changeName.wxss */
+
+.content-arrow {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 30rpx;
+}
+
+.box {
+  height: 90rpx;
+  margin-right: 0;
+  width: 96%;
+  margin-left: 0rpx;
+  padding-left: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 158rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.img {
+  height: 106rpx;
+  width: 696rpx;
+}
+
+.content-text {
+  font-size: 28rpx;
+  color: #999;
+  flex-grow: 1;
+}

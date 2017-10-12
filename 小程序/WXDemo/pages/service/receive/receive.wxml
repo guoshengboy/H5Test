@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="item-box">
+    <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/service-recive.png" mode="aspectFit"></image>
+    <view class="cost-box" style="height:130rpx; border-top:solid 1rpx #f0f0f0; justify-content: center;">
+      <text>请输入支付金额</text>
+      <input class="input-box" type="digit" placeholder="请填写金额" placeholder-style="color:#999;" />
+      <text>元</text>
+    </view>
+  </view>
+
+  <view class="item-box">
+    <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/pay-service-payment-img.png" mode="aspectFit"></image>
+    <view class="cost-box widget-box" style="height:100rpx; border-top:solid 1rpx #f0f0f0;">
+      <image src="../../../assets/images/wechat_logo.png" style="flex:0 1 atuo;width:50rpx;height:41rpx;margin-right:26rpx;margin-left:15rpx;"></image>
+      <text style="flex-grow:1 ;">微信支付</text>
+      <image src="../../../assets/images/pay_type_select.png" style="flex:0 1 atuo;width:40rpx;height:40rpx;"></image>
+    </view>
+  </view>
+
+  <image class="img" src="../../../assets/images/service-confirm-pay-enable.png" wx:if="{{canCofirm}}"></image>
+  <image class="img" src="../../../assets/images/service-confirm-pay.png" hidden="{{canCofirm}}"></image>
+</view>

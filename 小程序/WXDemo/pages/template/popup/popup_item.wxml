@@ -1,0 +1,9 @@
+<template name="popup_item">
+  <view class="popup-item-box">
+    <text class="single-line" style="width:48%; flex: 0 0 auto;line-height: 32rpx;">{{menu_name}}</text>
+    <text class="popup-item-price">￥{{menu_price}}</text>
+    <image src="../../../assets/images/dish_delete.png" style="width:59rpx; height:59rpx; flex: 0 0 auto;" catchtap="deleteDishCart" data-id="{{id}}" data-index="{{index}}"></image>
+    <text class="popup-item-num">{{number}}</text>
+    <image src="../../../assets/images/dish_add.png" style="width:59rpx; height:59rpx; flex: 0 0 auto;" catchtap="addDishCart" data-id="{{id}}" data-index="{{index}}"></image>
+  </view>
+</template>

@@ -1,0 +1,67 @@
+<!--pages/launch/launch.wxml-->
+<view>{{name}}</view>
+<button bindtap='changeName'>click change data</button>
+
+
+<!--列表
+<view wx:for="{{dataArray}}">{{index}}=={{item}}</view>
+-->
+
+
+<!--条件  不显示数组中item为a的
+<view  wx:for="{{dataArray}}"  wx:if="{{item != 'a'}}">{{item}}</view>
+-->
+
+
+<!--模板：自定义
+<template name="showDevName">
+<view>姓名为：{{firstName}}{{lastName}}</view>
+</template>
+-->
+<!--模板 ...nameA传的一个对象
+<template is="showDevName" data="{{...nameA}}"></template>
+<template is="showDevName" data="{{...nameB}}"></template>
+<template is="showDevName" data="{{...nameC}}"></template>
+-->
+<!--模板  直接传值
+<template is="showDevName" data="{{firstName:name1, lastName:name2}}"></template>
+-->
+
+
+<!--组件的属性在双引号内-->
+<!--
+<view id="id{{name}}">aView</view>
+-->
+
+
+<!--id传参  dataset传参-->
+<button id='1' bindtap='skipTabBar'>跳转tabBar</button>
+<button data-id='2' bindtap='skipTabBar'>跳转index</button>
+
+
+
+
+
+
+<!--wx:key 重新渲染时保存当时的选择状态 否则重新渲染都初始化状态（未选择）
+<switch wx:for="{{objectArray}}" wx:key="unique" style="display: block;"> {{item.id}} </switch>
+<button bindtap="switch"> Switch </button>
+<button bindtap="addToFront"> Add to the front </button>
+
+<switch wx:for="{{numberArray}}" wx:key="*this" style="display: block;"> {{item}} </switch>
+<button bindtap="addNumberToFront"> Add to the front </button>
+-->
+
+
+<!--文件引入 wxml-->
+<!--import  只是引入 想用就直接调用
+<import src="/Base/WXML/base.wxml"/>
+<template is="abc"></template>
+-->
+<!--include 相当于把代码贴过来 除了定义<template/>代码
+<include src="/Base/WXML/base.wxml"/>
+-->
+<!--js引入要在js文件才能引入  实例看launch.js 调用base.js方法-->
+
+
+

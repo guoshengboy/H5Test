@@ -1,0 +1,11 @@
+<!--pages/order/order.wxml-->
+<import src="../../template/login.wxml" />
+<import src="../../template/order/order_item.wxml" />
+<view>
+  <view class="container" wx:if="{{isLogin}}">
+    <template is="order_item" data="{{ list, prompt }}" />
+  </view>
+  <view class="container" wx:else>
+    <template is="not_login" data="{{msg,address}}"></template>
+  </view>
+</view>

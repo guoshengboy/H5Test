@@ -1,0 +1,12 @@
+<!--pages/shoppingCart/shoppingCart.wxml-->
+<import src="../template/login.wxml" />
+<import src="../template/shopping_cart/shopping_item.wxml" />
+<view>
+  <view class="container" wx:if="{{isLogin}}">
+    <template is="shopping_item" data="{{list,prompt,hospital_name}}"></template>
+  </view>
+
+  <view class="container" wx:else>
+    <template is="not_login" data="{{msg}}"></template>
+  </view>
+</view>

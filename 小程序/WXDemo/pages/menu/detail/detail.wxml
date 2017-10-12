@@ -1,0 +1,29 @@
+<!--pages/menu/detail/detail.wxml-->
+<import src="../../template/settlement" />
+<view style="padding-bottom: 100rpx">
+  <image class="dish-img" src="{{dish.menu_original}}"></image>
+  <!--<image class="dish-img animation" animation="{{animation}}" src="{{dish.menu_original}}"></image>-->
+  <view class="dish-name-box border-bottom white-bg">
+    <text class="title-text" style="margin-bottom:30rpx">{{dish.menu_name}}</text>
+    ￥{{dish.menu_price}}
+    <view class="add-btn" wx:if="{{dish.selectNum>0}}" hidden="{{isService}}">
+      <view class="item-delete">
+        <image src="../../../assets/images/dish_delete.png" style="width:59rpx; height:59rpx" catchtap="deleteDish" data-id="{{id}}" data-index="{{index}}"></image>
+        <view>
+          <text>{{dish.selectNum}}</text>
+        </view>
+        <image src="../../../assets/images/dish_add.png" style="width:59rpx; height:59rpx" catchtap="addDish" data-id="{{id}}" data-index="{{index}}"></image>
+      </view>
+    </view>
+    <image class="add-btn dish-add-img" src="../../../assets/images/add_shopping_cart.png" wx:else bindtap="addDish" hidden="{{isService}}"></image>
+  </view>
+
+  <view class="dish-name-box border-bottom white-bg" style="color: #999; height: auto">
+    商品介绍
+    <text class="dish-content-text">{{dish.desc}}</text>
+  </view>
+
+  <image class="pay" src="../../../assets/images/seller-service-btn.png" hidden="{{!isService}}" bindtap="serviceSettlement"></image>
+
+  <template is="settlement" data="{{settlement, isService}}"></template>
+</view>

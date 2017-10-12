@@ -1,0 +1,23 @@
+<!--pages/personal/changeMobile/changeMobile.wxml-->
+<view class="container">
+  <view class="white-bg" style="padding-left:30rpx; margin-top: 20rpx; width:96%">
+    <view class="cost-box  border-bottom box">
+      <text style="width:140rpx">新手机号:</text>
+      <input class="content-text" type="number" placeholder="请输入手机号" name="mobile" value="{{form.mobile}}" bindinput="mobileChange"></input>
+      <view class="get-code" bindtap="getCode">
+        {{codeSecond}}</view>
+    </view>
+  </view>
+
+  <view class="cost-box white-bg border-bottom box" style="padding-left:30rpx; width: 96%;">
+    <text style="width:140rpx">验证码:</text>
+    <input class="content-text" type="number" placeholder="请输入验证码" name="code" value="{{form.code}}" bindinput="codeChange"></input>
+  </view>
+
+  <button id="form-btn" formType="submit" plain="true">
+    <image class="img" src="/assets/images/submit_enable.png" wx:if="{{canSubmit}}"></image>
+  </button>
+
+  <image class="img" src="/assets/images/submit.png" hidden="{{canSubmit}}"></image>
+
+</view>

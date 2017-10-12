@@ -1,0 +1,7 @@
+<view class="container">
+  <image class="success-img" src="../../../assets/images/refund-success.png"></image>
+  <text class="hint-text">退款提交成功\n请耐心等待退款申请审核</text>
+  <text class="refund-text" hidden="{{money == undefine ||money.length == 0}}">您的退款金额为{{money}}元</text>
+  <image class="img" src="../../../assets/images/refund-success-back.png" bindtap="confirm"></image>
+
+</view>

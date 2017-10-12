@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<import src="../template/shop_item.wxml" />
+<import src="../template/swiper.wxml" />
+<!--授权失败-->
+<view class="container" wx:if="{{show}}">
+  <image class="loc-fail" src="../../assets/images/loc.png"></image>
+  <text class="loc-fail-text">{{empty.msg}}</text>
+  <image style="height: 106rpx; margin-bottom: 30rpx" src="../../assets/images/select_hospital.png" mode="aspectFit" bindtap="chooseHospital"></image>
+  <image style="height: 33rpx; " src="../../assets/images/refresh_loc.png" mode="aspectFit" bindtap="location" hidden="{{empty.locSuc}}"></image>
+</view>
+
+<!--授权成功-->
+<view class="container-box" wx:else>
+  <view class="loc-header white-bg" bindtap="chooseHospital">
+    <image class="loc-left-img" mode="scaleToFill" src="../../assets/images/loction.png"></image>
+    <text class="single-line" style="width: auto; max-width: 90%;">{{hospital_name}}</text>
+    <image style="width: 11rpx; height: 18rpx; margin-left: 16rpx" src="../../assets/images/arrow.png"></image>
+  </view>
+  <template is="swiper" data="{{ swiper }}" />
+  <template is="shop_item" data="{{ list, prompt }}" />
+</view>

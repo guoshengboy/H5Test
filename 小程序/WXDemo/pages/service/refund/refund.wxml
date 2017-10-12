@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="item-box">
+    <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/service-refund.png" mode="aspectFit"></image>
+    <view class="cost-box" style="height:130rpx; border-top:solid 1rpx #f0f0f0; justify-content: center;">
+      <text>请输入退款金额</text>
+      <input class="input-box" type="digit" placeholder="请填写金额" placeholder-style="color:#999;" bindinput="input"/>
+      <text>元</text>
+    </view>
+    <view class="cost-box content-box">
+      <text>最多可退金额</text>
+      <text style="color:#ff0606">￥{{money_paid}}</text>
+    </view>
+    <text class="content-box content-text">实际退款金额请根据您的消费数据调整</text>
+  </view>
+
+  <image class="img" src="../../../assets/images/submit_enable.png" wx:if="{{canCofirm}}" bindtap="confirm"></image>
+  <image class="img" src="../../../assets/images/submit.png" hidden="{{canCofirm}}"></image>
+</view>

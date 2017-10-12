@@ -1,0 +1,19 @@
+<import src="popup_item.wxml" />
+
+<template name="popup">
+
+  <view class="popup-box" hidden="{{settlement.hidden}}" style="background: #000; opacity: 0.7;overflow:auto" catchtap="popup"></view>
+  <view class="popup-box" hidden="{{settlement.hidden}}">
+    <view class="popup-header">
+      <view class="popup-header-line"></view>
+      <text style="flex-grow:1">购物车</text>
+      <image class="popup-header-img" src="../../../assets/images/delete.png"></image>
+      <text class="popup-header-clear" catchtap="clearShoppingCart">清空购物车</text>
+    </view>
+    <view class="popup-scroll">
+      <block wx:for="{{settlement.list}}">
+        <template is="popup_item" data="{{...item, index}}"></template>
+      </block>
+    </view>
+  </view>
+</template>

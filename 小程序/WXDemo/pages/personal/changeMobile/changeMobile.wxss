@@ -1,0 +1,36 @@
+/* pages/personal/changeMobile/changeMobile.wxss */
+
+.img {
+  height: 106rpx;
+  width: 696rpx;
+  margin-top: 158rpx;
+}
+
+.content-text {
+  font-size: 28rpx;
+  color: #999;
+  flex-grow: 1;
+}
+
+.box {
+  height: 90rpx;
+  margin-right: 0;
+  width: 100%;
+  margin-left: 0rpx;
+  padding: 0;
+}
+
+.get-code {
+  width: 190rpx;
+  height: 62rpx;
+  font-size: 26rpx;
+  color: #5191fa;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx #5191fa solid;
+  border-radius: 8px;
+  margin-right: 40rpx;
+}
+

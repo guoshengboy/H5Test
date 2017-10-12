@@ -1,0 +1,6 @@
+<template name="detail_item">
+  <view class="flex-wrap flex-direction-row">
+    <view class="common-text single-line detail-left">{{ menu_name }}</view>
+    <text class="common-text content-box detail-right">×{{ number }}</text>
+  </view>
+</template>

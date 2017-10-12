@@ -1,0 +1,104 @@
+<!--pages/order/confirm/confirm.wxml-->
+<import src="../../template/hos_header.wxml" />
+<import src="../../template/shopping_cart/shopping_detail.wxml" />
+
+<scroll-view>
+  <view class="container" style="padding-bottom:120rpx;">
+    <view class="item-box">
+      <view class="hos-header-box border-bottom" style="margin-left: 20rpx; width: 95%">
+        <image style="height: 49rpx; width: 42rpx; margin-right: 20rpx;" src="../../../assets/images/confirm_loc.png" />
+        <view class="hos-block-box" wx:if="{{hospitalConfig.hospital_subordinate.length>0}}">
+          <picker style="flex-grow:1;" bindchange="hosChange" value="{{hosIndex}}" range="{{hospitalConfig.hospital_subordinate}}" class="choose-text" range-key="name">
+            <text class="hos-picker-text" wx:if="{{hosIndex==-1}}">请选择医院院区</text>
+            <view class="hos-picker-text picker-text single-line" wx:else>
+              {{hospitalConfig.hospital_subordinate[hosIndex].name}}
+            </view>
+          </picker>
+          <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+        </view>
+        <text class="hos-header-text single-line" wx:else>{{hospital_name}}</text>
+      </view>
+
+      <view class="address-box" bindtap="clickAddress">
+        <text wx:if="{{address == null}}">选择收货地址</text>
+
+        <view class="address-text-box" wx:else>
+          <text>{{ address.username }} {{ address.gender == '2' ? '女士' : '先生' }} {{ address.mobile }}</text>
+          <text class="address-content-text">{{ address.ward_name}} {{ address.building_name }} {{ address.floors}} {{ address.bed}}</text>
+        </view>
+
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <view style="margin-left: 20rpx; ">
+        <template is="hos_header" data="{{logo,hospital_name,supplier_name}}"></template>
+      </view>
+
+      <block wx:for="{{supplier.shop_cart}}">
+        <template is="shopping_detail" data="{{item}}"></template>
+      </block>
+
+      <view class="item-foot">
+        <text>总计 ￥{{supplier.amount}}</text>
+      </view>
+
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+
+      <view class="cost-box">
+        <text>配送方式</text>
+        <picker bindchange="bindPickerChange" value="{{eatType}}" range="{{array}}" class="choose-text">
+          <text wx:if="{{eatType==-1}}">请选择方式</text>
+          <view class="picker-text" wx:else>
+            {{array[eatType]}}
+          </view>
+        </picker>
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+      <view class="cost-box">
+        <text>配送时间</text>
+        <picker bindchange="bindTimePickerChange" value="{{selectTime}}" range="{{timeArray}}" class="choose-text">
+          <text wx:if="{{selectTime==-1}}">请选择时间</text>
+          <view class="picker-text" wx:else>
+            {{timeArray[selectTime]}}
+          </view>
+        </picker>
+        <image style="width: 11rpx; height: 18rpx" src="../../../assets/images/arrow.png"></image>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <image style="margin-top:32rpx; margin-bottom: 26rpx; height: 27rpx; width: 100%;" src="../../../assets/images/dish_list.png" mode="aspectFit"></image>
+      <view class="cost-box">
+        <text>商品价格（{{supplier.total_number}}件）</text>
+        <text>￥{{supplier.amount}}</text>
+      </view>
+      <view class="cost-box">
+        <text>配送费</text>
+        <text>￥{{supplier.delivery_costs}}</text>
+      </view>
+      <view class="cost-box">
+        <text>包装费</text>
+        <text>￥{{supplier.lunch_box}}</text>
+      </view>
+      <image src="../../../assets/images/list_center.png" style="width: 100%; height: 30rpx" mode="scaleToFill"></image>
+      <view class="item-foot">
+        <text>实付 </text>
+        <text style="color:#ff0606">￥{{supplier.total}}</text>
+      </view>
+    </view>
+
+    <view class="item-box">
+      <view class="cost-box border-bottom" style="min-height:70rpx">
+        <text style="flex: 0 0 auto;">备注信息</text>
+        <textarea class="choose-text" type="text" placeholder="请输入您的备注信息" bindinput="remarkChange" auto-height="true"></textarea>
+      </view>
+      <view class="cost-box" style="height:70rpx">
+        <text>支付方式</text>
+        <text>微信支付</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<image class="pay" src="../../../assets/images/pay.png" bindtap="createOrder"></image>

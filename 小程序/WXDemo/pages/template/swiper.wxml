@@ -1,0 +1,9 @@
+<template name="swiper">
+  <swiper class="swiper-box" indicator-dots="{{swiper.indicatorDots}}" autoplay="{{swiper.autoplay}}" interval="{{swiper.interval || 5000}}" duration="{{swiper.duration || 1000}}" wx:if="{{swiper.data.length}}">
+    <block wx:for="{{swiper.data}}">
+      <swiper-item>
+        <image src="{{item.img_original}}" class="slide-image" width="{{swiper.width}}" height="{{swiper.height}}" />
+      </swiper-item>
+    </block>
+  </swiper>
+</template>

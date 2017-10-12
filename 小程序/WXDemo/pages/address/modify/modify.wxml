@@ -1,0 +1,69 @@
+<form bindsubmit="submitForm">
+  <view class="container">
+    <view class="box" style="margin-top: 20rpx">
+      <text class="hint-text">姓名</text>
+      <input class="border-bottom" type="text" placeholder="请输入姓名" name="username" value="{{form.username}}" bindinput="usernameChange" style="flex-grow: 1; height: 86rpx"></input>
+    </view>
+    <view class="box border-bottom">
+      <text class="hint-text"></text>
+      <radio-group class="radio-group" name="gender" bindchange="radioChange">
+        <label wx:for="{{ radio }}" wx:key="{{ item.value }}">
+          <radio class="radio-default" value="{{ item.value }}" checked="{{ item.checked }}" />
+          <view class="radio radio-enable" wx:if="{{ item.checked }}">
+            {{ item.name }}
+          </view>
+          <view class="radio" wx:else>{{ item.name }}</view>
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">电话</text>
+      <input type="number" placeholder="请输入联系电话" name="mobile" value="{{form.mobile}}" bindinput="mobileChange" style="flex-grow: 1"></input>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text" style="width:96%">{{hospital_name}}</text>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">区域</text>
+      <picker class="picker-box" bindchange="wardChange" value="{{areaIndex}}" range="{{areaArray}}" range-key="title" data-id="{{areaArray[areaIndex].id}}">
+        <p class="content-hint-text picker-content" wx:if="{{areaIndex==-1}}">请选择区域</p>
+        <view class="picker-content" wx:else>
+          {{areaArray[areaIndex].title}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">楼名</text>
+      <input type="text" placeholder="请输入楼名" name="building_name" value="{{form.building_name}}" bindinput="building_nameChange" style="flex-grow: 1"></input>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">楼层</text>
+      <picker class="picker-box" bindchange="floorsChange" value="{{floorsIndex}}" range="{{floorsArray}}">
+        <text class="content-hint-text picker-content" wx:if="{{floorsIndex==-1}}">请选择楼层</text>
+        <view class="picker-content" wx:else>
+          {{floorsArray[floorsIndex]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">床位号</text>
+      <input type="text" placeholder="请输入床位号" name="bed" value="{{form.bed}}" bindinput="bedChange" style="flex-grow: 1"></input>
+    </view>
+
+    <view class="box border-bottom">
+      <text class="hint-text">备注</text>
+      <input type="text" placeholder="请输入备注" name="recv_addr" value="{{form.recv_addr}}" bindinput="recv_addrChange" style="flex-grow: 1"></input>
+    </view>
+    <button id="form-btn" formType="submit" plain="true" hidden="{{!canSave}}">
+      <image class="save" src="../../../assets/images/save_enable.png"></image>
+    </button>
+    <image class="save" src="../../../assets/images/save.png" hidden="{{canSave}}"></image>
+  </view>
+
+</form>

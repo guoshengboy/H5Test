@@ -1,0 +1,10 @@
+<!--pages/menu/list/list.wxml-->
+<import src="../../template/order/menu_list" />
+<import src="../../template/settlement" />
+<view style="padding-bottom: 100rpx">
+  <view class="container white-bg" >
+    <template is="menu_list" data="{{logo, hospital_name, list, prompt, isService}}"></template>
+  </view>
+  <template is="settlement" data="{{settlement, isService}}"></template>
+
+</view>

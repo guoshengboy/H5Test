@@ -1,0 +1,21 @@
+<template name="menu_item">
+  <view class="item-box border-bottom" catchtap="clickItem" data-index="{{index}}">
+    <image class="item-img" src="{{menu_thumb}}" mode="scaleToFill"></image>
+    <view class="item-text-box">
+      <text class="item-title-text single-line">{{menu_name}}</text>
+      <text class="item-content-text">{{desc}}</text>
+      ￥{{menu_price}}
+    </view>
+
+    <view class="add-btn" wx:if="{{selectNum > 0}}" hidden="{{isService}}">
+      <view class="item-delete">
+        <image src="../../../assets/images/dish_delete.png" style="width:59rpx; height:59rpx" catchtap="deleteDish" data-id="{{id}}" data-index="{{index}}"></image>
+        <view>
+          <text>{{selectNum}}</text>
+        </view>
+        <image src="../../../assets/images/dish_add.png" class="item-add-img" catchtap="addDish" data-id="{{id}}" data-index="{{index}}"></image>
+      </view>
+    </view>
+    <image src="../../../assets/images/cart_empty.png" class="add-btn item-add-img" style="padding-bottom: 10rpx; " catchtap="addDish" data-id="{{id}}" data-index="{{index}}" wx:else  hidden="{{isService}}"></image>
+  </view>
+</template>

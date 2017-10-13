@@ -1,36 +1,22 @@
 <!--pages/Home/home/home.wxml-->
 
-<import src="../../template/Home/home-item.wxml"/>
+<import src="../../template/Home/home-template.wxml"/>
 
-<!--
-<view class="section">
-  <view class="section__title">flex-direction: row</view>
-  <view class="flex-wrp" style="display:flex; flex-direction:row;">
-    <view class="flex-item bc_green">1</view>
-    <view class="flex-item bc_red">2</view>
-    <view class="flex-item bc_blue">3</view>
-    <view class="flex-item bc_green">4</view>
-    <view class="flex-item bc_red">5</view>
-  </view>
-</view>
-<view class="section">
-  <view class="section__title">flex-direction: column</view>
-  <view class="flex-wrp" style="display:flex;flex-direction:column;">
-    <view class="flex-item bc_green">1</view>
-    <view class="flex-item bc_red">2</view>
-    <view class="flex-item bc_blue">3</view>
-    <view class="flex-item bc_green">4</view>
-    <view class="flex-item bc_red">5</view>
-  </view>
-</view>
--->
-<view class="page">
+  <view class="header">
+  <scroll-view  class="scroll-view bg-purple"  scroll-x="true">
+   <!-- <block wx:if="{{fuctionArray.length<=8}}"> -->
+    <template is="function-enter-page" data="{{fuctionArray}}"></template> 
+    <template is="function-enter-page" data="{{fuctionArray}}"></template> 
+   <!-- </block> -->
+  </scroll-view>
+ </view> 
 
-<view class="container-list">
- <view wx:for="{{dataArray}}">
-   <template is="canteen-item" data="{{item, index}}"></template>
+  <view class="container-list">
+  <view  wx:for="{{dataArray}}"  wx:key="{{item.id}}" >
+    <template is="canteen-item" data="{{item, index}}"></template>
+  </view>
  </view>
-</view>
-</view>
-
+ <view class="footer">
+  <text>this is footer</text>
+ </view> 
 

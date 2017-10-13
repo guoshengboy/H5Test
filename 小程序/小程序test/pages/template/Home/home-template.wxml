@@ -1,0 +1,29 @@
+<template name="canteen-item">
+  <view class="content-bg  {{index%2==0?'bg_yellow':'bg_green'}}">
+    <image class="canteen-icon, icon-frame" src="{{item.icon}}"></image>
+    <text class='canteen-title'>{{item.title}}</text>
+  </view>
+</template>
+
+
+
+<!--功能入口项-->
+  <template name="function-enter-item">
+  <view class="function-enter-item" >
+     <image class="function-enter-item-icon" src="{{item.icon}}"></image>
+     <text class='function-enter-item-title'>{{item.title}}</text>  
+  </view>
+</template>  
+
+
+
+<!--功能滑动页-->
+<template name="function-enter-page">
+ <view class="function-enter-page-bg">
+  <view class="function-enter-page bg-red">
+   <block wx:for="{{fuctionArray}}">
+    <template is="function-enter-item" data="{{item}}"></template>
+   </block>
+  </view>
+  </view>
+</template>  

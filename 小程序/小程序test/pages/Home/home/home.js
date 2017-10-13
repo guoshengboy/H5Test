@@ -5,25 +5,84 @@ Page({
    * 页面的初始数据
    */
   data: {
+  fuctionArray:[
+    {
+      icon: "/source/default.png",
+      title: "2222wwww美食qqqqq111"
+    },
+    {
+      icon: "/source/default.png",
+      title: "美团超市"
+    },
+    {
+      icon: "/source/default.png",
+      title: "生鲜果蔬"
+    },
+    {
+      icon: "/source/default.png",
+      title: "甜点饮品"
+    },
+    {
+      icon: "/source/default.png",
+      title: "美团专送"
+    },
+    {
+      icon: "/source/default.png",
+      title: "正餐优选"
+    },
+    {
+      icon: "/source/default.png",
+      title: "快餐小吃"
+    },
+    {
+      icon: "/source/default.png",
+      title: "全部商家"
+    },
+    {
+      icon: "/source/default.png",
+      title: "甜点饮品"
+    },
+    {
+      icon: "/source/default.png",
+      title: "美团专送"
+    },
+    {
+      icon: "/source/default.png",
+      title: "正餐优选"
+    },
+    {
+      icon: "/source/default.png",
+      title: "快餐小吃"
+    },
+    {
+      icon: "/source/default.png",
+      title: "全部商家"
+    }
+  ],  
   dataArray:[
     {
+      id: "1000",
       icon: "/source/default.png",
       title: "米芝莲（日月光店）"
     },
     {
+      id: "1001",
+      icon: "/source/default.png",
+      title: "麻辣香锅（真好吃）真的好吃呀呀呀呀呀真的好吃呀呀呀呀呀"
+    },
+    {
+      id: "1002",
       icon: "/source/default.png",
       title: "麻辣香锅（真好吃）"
     },
     {
-      icon: "/source/default.png",
-      title: "麻辣香锅（真好吃）"
-    },
-    {
+      id: "1003",
       icon: "/source/default.png",
       title: "麻辣香锅（真好吃）"
     }
   ]
   },
+
   /**
    * 生命周期函数--监听页面加载
    */

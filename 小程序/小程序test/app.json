@@ -14,6 +14,8 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar":{
+    "color": "#666666",
+    "selectedColor": "#000000",
     "list":[{
     "pagePath": "pages/Home/home/home",
     "text": "首页",
@@ -29,9 +31,6 @@
       "text": "我的",
       "iconPath": "source/tabbar_person.png",
       "selectedIconPath": "source/tabbar_person_on.png"
-    }],
-    "position": "bottom",
-    "color": "grey",
-    "selectedColor": "black"
+    }]
   }
 }

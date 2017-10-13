@@ -1,37 +1,112 @@
 /* pages/Home/home/home.wxss */
 
-/* 
- .section-item{
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+
+.bg-black{
+  background-color: black;
 }
 
-.flex-item{ 
-  width: 100px;
-  height: 100px;
-}
-
-.bc_green{
-  background-color: green;
-}
-
-.bc_red{
+.bg-red{
   background-color: red;
 }
 
-.bc_blue{
-  background-color: blue;
-}  */
+.bg-orange{
+  background-color: orange;
+}
+
+.bg-purple{
+  background-color: purple;
+}
+
+/********************  HERDER  ***********************/
+.header{
+  width: 100%;
+  height: 200px;
+}
+
+
+.scroll-view{
+  display: flex;
+  width: 100%;
+  height: 200px;
+}
+
+/* .scroll-item{
+  width: 150px;
+  height: 200px;
+  display: inline-block;
+} */
+
+
+.function-enter-page-bg{
+  width: 100%;
+  height: 200px;
+  display: inline-block;
+}
+
+/*滑动页*/
+.function-enter-page{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*功能按钮*/
+.function-enter-item{
+  width: 25%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*功能按钮图片*/
+.function-enter-item-icon{
+  width: 50px;
+  height: 50px;
+  margin-top: 25px;
+}
+
+/*功能按钮标题*/
+.function-enter-item-title{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5px;
+  font-size: 13px;
+  width: 90%;
+  height: 14px;
+  text-align: center;
+  overflow: hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+
+
+
+
+
+
 
 
 .container-list{
   display: flex;
   flex-direction: column; 
+  justify-content: center;
 }
 
 .content-bg{
-  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 115px;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10px;
+  overflow: hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap; 
 }
 
 
@@ -44,6 +119,24 @@
 }
 
 .icon-frame{
+  position: absolute; 
   width: 80px;
   height: 80px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.canteen-title{
+  position: relative; 
+  font-size: 13px;
+  color: #333;
+  line-height: 14px;
+  height: 14px;
+  /* background-color: red;  */
+  margin-left: 95px;
+  margin-right: 10px;
+  margin-top: 5px;
+  overflow: hidden;  
+  text-overflow:ellipsis;
+  white-space:nowrap; 
 }
